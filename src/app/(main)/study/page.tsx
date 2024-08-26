@@ -28,7 +28,13 @@ import {
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 
+import {Reorder} from "framer-motion"
+import { useState } from "react"
+
 export default function StudyPage() {
+
+  const [items, setItems] = useState([0, 1, 2, 3])
+
   return (
 
     <div className='flex flex-col gap-4 px-4'>
@@ -88,10 +94,15 @@ export default function StudyPage() {
         </div>
       </div>
 
-      <div className='grid gap-4 '>
-        {Array.from({ length: 10 }).map((_, i) => (
-          <CardITem key={i} name={"Gestão"} href={"study/basic"} />
-        ))}
+
+      <div className=''>
+        <Reorder.Group axis="y" values={items} onReorder={setItems} className='grid gap-4'>
+          {items.map((item) => (
+            <Reorder.Item key={item} value={item}>
+                   <CardITem name={"Gestão"} href={"study/basic"} />
+            </Reorder.Item>
+          ))}
+        </Reorder.Group>
       </div>
 
     </div>

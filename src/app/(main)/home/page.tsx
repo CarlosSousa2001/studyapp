@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useEffect } from 'react'
 import { CardITem } from './_components/CardITem'
 import { Input } from '@/components/ui/input'
 import { Search, X } from 'lucide-react'
@@ -16,8 +17,30 @@ import {
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 
+import {Reorder} from "framer-motion"
+import { useState } from "react"
 
+//https://www.framer.com/motion/reorder/
 export default function page() {
+
+  const [items, setItems] = useState<number[]>([0, 1, 2, 3]); // Valor padrão
+
+  useEffect(() => {
+    // Verifica se o código está sendo executado no lado do cliente
+    if (typeof window !== "undefined") {
+      const savedItems = localStorage.getItem("reorderedItems");
+      if (savedItems) {
+        setItems(JSON.parse(savedItems));
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("reorderedItems", JSON.stringify(items));
+    }
+  }, [items]);
+
   return (
 
     <div className='flex flex-col gap-4 px-4'>
@@ -61,10 +84,14 @@ export default function page() {
         </div>
       </div>
 
-      <div className='grid gap-4 '>
-        {Array.from({ length: 10 }).map((_, i) => (
-          <CardITem key={i} href={"study"} />
-        ))}
+      <div className=''>
+        <Reorder.Group axis="y" values={items} onReorder={setItems} className='grid gap-4'>
+          {items.map((item) => (
+            <Reorder.Item key={item} value={item}>
+              <CardITem href={"study"}/>
+            </Reorder.Item>
+          ))}
+        </Reorder.Group>
       </div>
 
     </div>

@@ -19,10 +19,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Download, ListStart, MessageSquareText, Trash2 } from 'lucide-react'
+import { Download, Grip, ListStart, MessageSquareText, Trash2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import type { DragControls } from 'framer-motion'
 
-export function CardITem({name, href}:{name?:String, href?:String}) {
+interface Props {
+  name?: String;
+  href?: String
+}
+
+export function CardITem({ name, href}:Props) {
 
   const router = useRouter()
 
@@ -31,12 +37,14 @@ export function CardITem({name, href}:{name?:String, href?:String}) {
   }
 
   return (
-    <div>
-      <Card className='border-2 border-zinc-700 cursor-pointer' onClick={() => handlebasic()}>
+    <div >
+      <Card className='border-2 border-zinc-700 cursor-pointer'>
         <CardHeader>
-          <CardTitle>{name ? name : "Estudo Estrelar"}</CardTitle>
+          <CardTitle onClick={() => handlebasic()} className='active:text-blue-500 hover:text-blue-600'>{name ? name : "Estudo Estrelar"}</CardTitle>
           <CardDescription>
             Lorem ipsum dolor sit amet consectetur. Varius viverra sit fringilla proin tristique in.
+
+            <Grip />
           </CardDescription>
         </CardHeader>
         <CardContent>
