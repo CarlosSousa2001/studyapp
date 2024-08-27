@@ -5,9 +5,10 @@ import { CardITem } from "./CardITem";
 interface Props {
   item: number;
   name?:String
+  href?:String
 }
 
-export const Item = ({ item, name}: Props) => {
+export const Item = ({ item, name, href}: Props) => {
   const y = useMotionValue(0);
   const dragControls = useDragControls();
 
@@ -18,7 +19,7 @@ export const Item = ({ item, name}: Props) => {
       dragListener={false}
       dragControls={dragControls}
     >
-      <CardITem href={"study"} name={name} dragControls={dragControls}/>
+      <CardITem href={href} name={name} dragControls={dragControls}/>
     </Reorder.Item>
   );
 };

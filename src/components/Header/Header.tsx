@@ -39,14 +39,17 @@ export function Header() {
           <SheetHeader>
             <SheetTitle className='flex mb-8'>Opções</SheetTitle>
           </SheetHeader>
-            <div>
-              <ul className='flex flex-col gap-4 font-semibold'>
-                <li className='hover:underline cursor-pointer'>Informações</li>
-                <li className='hover:underline cursor-pointer'>Configurações</li>
-                <li className='hover:underline cursor-pointer'>Contatos</li>
-                <li className='hover:underline cursor-pointer'>Temas</li>
-              </ul>
-            </div>
+          <div>
+            <ul className='flex flex-col gap-4 font-semibold'>
+              <li className='hover:underline cursor-pointer'>
+                <Link href={"/create-and-organizate"}>Anotação rápida</Link>
+              </li>
+              <li className='hover:underline cursor-pointer'>Informações</li>
+              <li className='hover:underline cursor-pointer'>Configurações</li>
+              <li className='hover:underline cursor-pointer'>Contatos</li>
+              <li className='hover:underline cursor-pointer'>Temas</li>
+            </ul>
+          </div>
         </SheetContent>
       </Sheet>
     </div>

@@ -99,7 +99,7 @@ export default function StudyPage() {
       <div className=''>
         <Reorder.Group axis="y" values={items} onReorder={setItems} className='grid gap-4'>
           {items.map((item) => (
-            <Item key={item} item={item} name={"Gestão"}/>
+            <Item key={item} item={item} name={"Gestão"} href={"theme/topic"}/>
           ))}
         </Reorder.Group>
       </div>

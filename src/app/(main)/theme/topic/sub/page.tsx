@@ -47,19 +47,19 @@ export default function SubPage() {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/study">
+              <BreadcrumbLink href="/theme">
                 Theme
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/study/basic">
+              <BreadcrumbLink href="/theme/topic">
                 Topic
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>succession</BreadcrumbPage>
+              <BreadcrumbPage>new</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -99,60 +99,6 @@ export default function SubPage() {
         </div>
 
       </div>
-
-      {/* <div className='w-full  mt-4'>
-        <div className=' flex items-center justify-between'>
-          <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Sub study</h3>
-
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button variant="ghost" className='hover:text-blue-500'>New topic</Button>
-            </DialogTrigger>
-            <DialogContent className="max-sm:w-[calc(100%-1.6vw)] sm:max-w-[425px] rounded-lg">
-              <DialogHeader>
-                <DialogTitle>Create a new sub</DialogTitle>
-              </DialogHeader>
-              <div className='grid gap-4'>
-                <div className="grid w-full max-w-sm items-center gap-1.5">
-                  <Label htmlFor="email">Title</Label>
-                  <Input type="text" id="title" placeholder="EX: sub: context argument" className='border-2 border-zinc-700' />
-                </div>
-
-                <div className="grid w-full max-w-sm items-center gap-1.5">
-                  <Label htmlFor="description">Description</Label>
-                  <Input type="text" id="description" className='border-2 border-zinc-700' />
-                </div>
-
-              </div>
-              <DialogFooter>
-                <Button type="submit">Save</Button>
-              </DialogFooter>
-            </DialogContent>
-          </Dialog>
-        </div>
-
-      </div> */}
-{/* 
-      <div className='w-full'>
-        <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger>sub: context argument</AccordionTrigger>
-            <AccordionContent className='flex flex-col gap-4 '>
-              <div className='cursor-pointer'>
-                <div className="grid w-full gap-1.5">
-                  <Label htmlFor="message">resume</Label>
-                  <Textarea placeholder="Type your message here." id="message" className='max-h-44' />
-                </div>
-              </div>
-
-              <div className='w-full flex justify-end'>
-                <Button variant={'outline'}>Save</Button>
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </div> */}
-
 
 
       <div className='w-full flex items-end justify-end py-9'>

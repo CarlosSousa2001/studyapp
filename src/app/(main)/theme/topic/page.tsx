@@ -41,13 +41,13 @@ export default function BasicPage() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">
+              <BreadcrumbLink href="/home">
                 Subject
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/study">
+              <BreadcrumbLink href="/theme">
                 Theme
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -113,7 +113,9 @@ export default function BasicPage() {
                 <div className='flex items-center justify-between'>
                   <div className='flex items-center gap-2'>
                     <span>1° Estudo</span>
-                    <p className="leading-7 hover:text-blue-500">Herança x sucessão</p>
+                    <Link href={"/theme/topic/study"}>
+                      <p className="leading-7 hover:text-blue-500">Herança x sucessão</p>
+                    </Link>
                   </div>
                   <span>22/12/2024</span>
                 </div>
@@ -132,7 +134,7 @@ export default function BasicPage() {
               </div>
 
               <div className='w-full flex justify-end'>
-                <Link href={"/study/basic/sub"}>
+                <Link href={"/theme/topic/sub"}>
                   <Button variant={'outline'}>Novo</Button>
                 </Link>
               </div>
