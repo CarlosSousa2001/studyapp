@@ -41,25 +41,25 @@ export default function SubPage() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/home">
-                Home
+              <BreadcrumbLink href="/">
+                Subject
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink href="/study">
-                Study
+                Theme
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink href="/study/basic">
-                Basic
+                Topic
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>New</BreadcrumbPage>
+              <BreadcrumbPage>succession</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -100,7 +100,7 @@ export default function SubPage() {
 
       </div>
 
-      <div className='w-full  mt-4'>
+      {/* <div className='w-full  mt-4'>
         <div className=' flex items-center justify-between'>
           <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Sub study</h3>
 
@@ -131,8 +131,8 @@ export default function SubPage() {
           </Dialog>
         </div>
 
-      </div>
-
+      </div> */}
+{/* 
       <div className='w-full'>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
@@ -151,7 +151,7 @@ export default function SubPage() {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-      </div>
+      </div> */}
 
 
 

@@ -28,8 +28,9 @@ import {
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 
-import {Reorder} from "framer-motion"
+import { Reorder } from "framer-motion"
 import { useState } from "react"
+import { Item } from '../home/_components/Item'
 
 export default function StudyPage() {
 
@@ -44,12 +45,12 @@ export default function StudyPage() {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/home">
-                home
+                Subject
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>Study</BreadcrumbPage>
+              <BreadcrumbPage>Theme</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -98,9 +99,7 @@ export default function StudyPage() {
       <div className=''>
         <Reorder.Group axis="y" values={items} onReorder={setItems} className='grid gap-4'>
           {items.map((item) => (
-            <Reorder.Item key={item} value={item}>
-                   <CardITem name={"Gestão"} href={"study/basic"} />
-            </Reorder.Item>
+            <Item key={item} item={item} name={"Gestão"}/>
           ))}
         </Reorder.Group>
       </div>

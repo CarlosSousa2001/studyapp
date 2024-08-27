@@ -42,18 +42,18 @@ export default function BasicPage() {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/">
-                Home
+                Subject
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink href="/study">
-                Study
+                Theme
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>Basic</BreadcrumbPage>
+              <BreadcrumbPage>Topic</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -96,6 +96,12 @@ export default function BasicPage() {
           </Dialog>
 
         </div>
+      </div>
+
+      <div>
+        <h1 className="mt-2 scroll-m-20 text-xl font-bold tracking-tight">
+          Estudo Bíblico/Gestão
+        </h1>
       </div>
 
       <div className='w-full'>

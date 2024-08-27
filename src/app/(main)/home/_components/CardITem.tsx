@@ -26,9 +26,10 @@ import type { DragControls } from 'framer-motion'
 interface Props {
   name?: String;
   href?: String
+  dragControls: DragControls;
 }
 
-export function CardITem({ name, href}:Props) {
+export function CardITem({ name, href, dragControls }: Props) {
 
   const router = useRouter()
 
@@ -40,11 +41,10 @@ export function CardITem({ name, href}:Props) {
     <div >
       <Card className='border-2 border-zinc-700 cursor-pointer'>
         <CardHeader>
-          <CardTitle onClick={() => handlebasic()} className='active:text-blue-500 hover:text-blue-600'>{name ? name : "Estudo Estrelar"}</CardTitle>
+          <CardTitle onClick={() => handlebasic()} className='active:text-blue-500 hover:text-blue-600'>{name ? name : "Estudo Bíblico"}</CardTitle>
           <CardDescription>
             Lorem ipsum dolor sit amet consectetur. Varius viverra sit fringilla proin tristique in.
 
-            <Grip />
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -64,8 +64,8 @@ export function CardITem({ name, href}:Props) {
 
             </div>
 
-            <div className='flex items-center'>
-              <Trash2 className='text-zinc-700 hover:text-red-500' />
+            <div className='flex items-center cursor-grab select-none' onMouseDown={(e: any) => dragControls.start(e)}>
+              <Grip/>
             </div>
           </div>
         </CardContent>

@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 import { CardITem } from './_components/CardITem'
 import { Input } from '@/components/ui/input'
-import { Search, X } from 'lucide-react'
+import { Brain, Lightbulb, MicVocal, RefreshCw, Search, X } from 'lucide-react'
 
 
 import {
@@ -17,13 +17,17 @@ import {
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 
-import {Reorder} from "framer-motion"
+import { Reorder, useMotionValue } from "framer-motion"
 import { useState } from "react"
+import { CardMidset } from './_components/CardMidset'
+import { Item } from './_components/Item'
 
 //https://www.framer.com/motion/reorder/
 export default function page() {
 
+
   const [items, setItems] = useState<number[]>([0, 1, 2, 3]); // Valor padrão
+
 
   useEffect(() => {
     // Verifica se o código está sendo executado no lado do cliente
@@ -84,12 +88,17 @@ export default function page() {
         </div>
       </div>
 
+      <div className='grid grid-cols-2 gap-4'>
+        <CardMidset Icon={MicVocal} />
+        <CardMidset Icon={Lightbulb} />
+        <CardMidset Icon={RefreshCw} />
+        <CardMidset Icon={Brain} />
+      </div>
+
       <div className=''>
         <Reorder.Group axis="y" values={items} onReorder={setItems} className='grid gap-4'>
           {items.map((item) => (
-            <Reorder.Item key={item} value={item}>
-              <CardITem href={"study"}/>
-            </Reorder.Item>
+            <Item key={item} item={item}/>
           ))}
         </Reorder.Group>
       </div>
